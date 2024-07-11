@@ -12,9 +12,8 @@ public interface ICategoryHandler
     // Async para não bloquear uma thread
     // Response é o retorno do CreateCategoryRequest
     // Category é o tipo do Response
-
-    Task<Response<Category?>>DeleteAsync(DeleteCategoryRequest request);
-    Task<Response<Category?>>UpdateAsync(UpdateCategoryRequest request);
-    Task<Response<List<Category>?>>GetAllAsync(GetAllCategoriesRequest request);
-    Task<PagedResponse<Category?>>GetByIdAsync(GetCategoryByIdRequest request); 
+    Task<Response<Category?>> UpdateAsync(UpdateCategoryRequest request);
+    Task<Response<Category?>> DeleteAsync(DeleteCategoryRequest request);
+    Task<Response<Category?>> GetByIdAsync(GetCategoryByIdRequest request);
+    Task<PagedResponse<List<Category>?>> GetAllAsync(GetAllCategoriesRequest request);
 }

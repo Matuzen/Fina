@@ -2,24 +2,28 @@
 
 namespace Fina.Core.Responses;
 
-public class Response<TData>
+public class Response<TData> // T<Data> é o tipo genérico de dados, hora ele é Categoria, hora ele é Transação
 {
     private int _code = Configuration.DefaultStatusCode;
 
-    public Response() => _code = Configuration.DefaultStatusCode;
-     
     [JsonConstructor]
-    public Response(TData? data, int code = Configuration.DefaultStatusCode, string? message = null)
+    public Response()
+        => _code = Configuration.DefaultStatusCode;
+
+    public Response(
+        TData? data,
+        int code = Configuration.DefaultStatusCode,
+        string? message = null)
     {
         Data = data;
         _code = code;
-        Message = message; 
+        Message = message;
     }
 
-    public int MyProperty { get; set; }
     public TData? Data { get; set; }
     public string? Message { get; set; }
 
-    [JsonIgnore ]
+    [JsonIgnore]
     public bool IsSuccess => _code is >= 200 and <= 299;
 }
+

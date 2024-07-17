@@ -17,6 +17,7 @@ public class CategoryHandler(AppDbContext context) : ICategoryHandler
             Title = request.Title,
             Description = request.Description
         };
+
         try
         {
             await context.Categories.AddAsync(category);
@@ -29,6 +30,7 @@ public class CategoryHandler(AppDbContext context) : ICategoryHandler
             return new Response<Category?>(null, 500, "Não foi possível criar a categoria");
         }
     }
+
 
     public async Task<Response<Category?>> DeleteAsync(DeleteCategoryRequest request)
     {

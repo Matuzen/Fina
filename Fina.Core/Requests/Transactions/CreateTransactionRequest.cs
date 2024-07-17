@@ -21,4 +21,7 @@ public class CreateTransactionRequest
     [Required(ErrorMessage = "Data Inválida")]
     public DateTime? PaidOrReceivedAt { get; set; }
 
+    [Required(ErrorMessage = "O UserId é obrigatório")]
+    public string UserId { get; set; } = string.Empty;
+
 }

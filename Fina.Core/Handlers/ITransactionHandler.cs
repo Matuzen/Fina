@@ -10,6 +10,6 @@ public interface ITransactionHandler
     Task<Response<Transaction>> CreateAsync (CreateTransactionRequest request);
     Task<Response<Transaction>> UpdateAsync (UpdateTransactionsRequest request);
     Task<Response<Transaction>> DeleteAsync (DeleteTransactionRequest request);
-    Task<PagedResponse<List<Transaction>>> GetAllAsync (GetAllCategoriesRequest request);
-    Task<Response<Transaction>> GetByPeriodAsync (GetCategoryByIdRequest request);
+    Task<Response<Transaction?>> GetByIdAsync(GetTransactionByIdRequest request);
+    Task<PagedResponse<List<Transaction>?>> GetByPeriodAsync(GetTransactionsByPeriodRequest request);
 }

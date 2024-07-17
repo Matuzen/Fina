@@ -2,6 +2,6 @@
 
 public class GetTransactionsByPeriodRequest : PagedRequest
 {
-    public DateTime? StartDate { get; set; }
-    public DateTime? EndDate { get; set; }
+    public DateTime? StartDate { get; set; } // primeiro dia do mês
+    public DateTime? EndDate { get; set; } // último dia do mês
 }

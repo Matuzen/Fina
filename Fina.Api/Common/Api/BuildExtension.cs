@@ -10,7 +10,7 @@ public static class BuildExtension
 {
     public static void AddConfiguration(this WebApplicationBuilder builder)
     {
-        ApiConfiguration.ConnectionString = builder.Configuration.GetConnectionString("DeafultConnection") ?? string.Empty;
+        ApiConfiguration.ConnectionString = builder.Configuration.GetConnectionString("DefultConnection") ?? string.Empty;
         Configuration.BackendUrl = builder.Configuration.GetValue<string>("BackendUrl") ?? string.Empty;
         Configuration.FrontendUrl = builder.Configuration.GetValue<string>("FrontendUrl") ?? string.Empty;
     }

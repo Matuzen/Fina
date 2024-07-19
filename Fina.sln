@@ -3,19 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fina.Api", "Fina.Api\Fina.Api.csproj", "{23F3FA23-2E01-4C1D-9D1A-2D67DC519F20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fina.Api", "Fina.Api\Fina.Api.csproj", "{23F3FA23-2E01-4C1D-9D1A-2D67DC519F20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fina.Core", "Fina.Core\Fina.Core.csproj", "{AD8DAD7D-DAE6-45AF-AA01-930586D122FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fina.Core", "Fina.Core\Fina.Core.csproj", "{AD8DAD7D-DAE6-45AF-AA01-930586D122FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fina.Web", "Fina.Web\Fina.Web.csproj", "{461434A9-C5DF-4953-A684-55921CF82AE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fina.Web", "Fina.Web\Fina.Web.csproj", "{461434A9-C5DF-4953-A684-55921CF82AE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{23F3FA23-2E01-4C1D-9D1A-2D67DC519F20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -30,5 +27,8 @@ Global
 		{461434A9-C5DF-4953-A684-55921CF82AE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{461434A9-C5DF-4953-A684-55921CF82AE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{461434A9-C5DF-4953-A684-55921CF82AE3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

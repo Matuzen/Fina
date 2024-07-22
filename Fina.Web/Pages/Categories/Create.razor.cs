@@ -8,7 +8,7 @@ namespace Fina.Web.Pages.Categories;
 public partial class CreateCategoryPage : ComponentBase
 {
     #region Properties
-    public bool IsBusy { get; set; } = false;
+    public bool IsBusy { get; set; } = false; // para saber se a página está ocupada ou não
     public CreateCategoryRequest InputModel { get; set; } = new();
     #endregion
 
@@ -28,14 +28,17 @@ public partial class CreateCategoryPage : ComponentBase
     #region Methods
     public async Task OnValidSubmitAsync()
     {
-        IsBusy = true;
+        IsBusy = true;  // página ocupada
         try
         {
             var result = await Handler.CreateAsync(InputModel);
-            if (result is null) 
-            { 
-                
+            if (result.IsSuccess)
+            {
+                Snackbar.Add(result.Message, Severity.Success);
+                NavigationManager.NavigateTo("/categorias");
             }
+            else
+                Snackbar.Add(result.Message, Severity.Error);
         }
         catch(Exception ex)
         {
@@ -50,3 +53,4 @@ public partial class CreateCategoryPage : ComponentBase
 }
 
 
+ 

@@ -24,7 +24,6 @@ public class CategoryHandler(IHttpClientFactory httpClientFactory) : ICategoryHa
         {
             return new Response<Category?>(null, 500, "Não foi possível criar a categoria");
         }
-       
     }
 
     public async Task<Response<Category?>> DeleteAsync(DeleteCategoryRequest request)

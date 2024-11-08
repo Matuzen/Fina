@@ -2,7 +2,6 @@
 
 public static class ApiConfiguration
 {
-    public const string UserId = "jornada@fullstack";
-    public static string ConnectionString { get; set; } = string.Empty;
-    public static string CorsPolicyName = "wasm";
+    public const string CorsPolicyName = "wasm";
+    public static string StripeApiKey { get; set; } = string.Empty;
 }

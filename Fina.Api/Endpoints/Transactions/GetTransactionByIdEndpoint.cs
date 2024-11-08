@@ -3,6 +3,7 @@ using Fina.Core.Handlers;
 using Fina.Core.Models;
 using Fina.Core.Requests.Transactions;
 using Fina.Core.Responses;
+using System.Security.Claims;
 
 namespace Fina.Api.Endpoints.Transactions;
 
@@ -17,12 +18,13 @@ public class GetTransactionByIdEndpoint : IEndpoint
            .Produces<Response<Transaction?>>();
 
     private static async Task<IResult> HandleAsync(
+        ClaimsPrincipal user,
         ITransactionHandler handler,
         long id)
     {
         var request = new GetTransactionByIdRequest
         {
-            UserId = ApiConfiguration.UserId,
+            UserId = user.Identity?.Name ?? string.Empty,
             Id = id
         };
 

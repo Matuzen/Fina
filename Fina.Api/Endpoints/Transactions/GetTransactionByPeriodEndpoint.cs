@@ -5,6 +5,7 @@ using Fina.Core.Responses;
 using Fina.Core;
 using Microsoft.AspNetCore.Mvc;
 using Fina.Core.Models;
+using System.Security.Claims;
 
 namespace Fina.Api.Endpoints.Transactions;
 
@@ -19,6 +20,7 @@ public class GetTransactionByPeriodEndpoint : IEndpoint
             .Produces<PagedResponse<List<Transaction>?>>();
 
     private static async Task<IResult> HandleAsync(
+        ClaimsPrincipal user,
         ITransactionHandler handler,
         [FromQuery] DateTime? startDate = null,
         [FromQuery] DateTime? endDate = null,
@@ -27,7 +29,7 @@ public class GetTransactionByPeriodEndpoint : IEndpoint
     {
         var request = new GetTransactionsByPeriodRequest
         {
-            UserId = ApiConfiguration.UserId,
+            UserId = user.Identity?.Name ?? string.Empty,
             PageNumber = pageNumber,
             PageSize = pageSize,
             StartDate = startDate,
